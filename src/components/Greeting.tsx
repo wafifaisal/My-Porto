@@ -32,7 +32,7 @@ export default function CurrentGreeting() {
     const interval = setInterval(() => {
       setCurrentGreeting(greetings[index]);
       setIndex((prevIndex) => (prevIndex + 1) % greetings.length);
-    }, 3000);
+    }, 1000);
     return () => clearInterval(interval);
   }, [index, greetings]);
 

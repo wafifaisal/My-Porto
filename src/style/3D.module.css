@@ -1,0 +1,66 @@
+.card {
+  perspective: 1000px;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out, background 0.3s ease-in-out;
+  position: relative; /* Agar anak-anak elemen dapat diposisikan absolut */
+}
+
+.card:hover {
+  /* Ambient light effect on hover */
+  box-shadow: 0 0 20px pink; /* Glowing card */
+}
+
+.questionMark {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transform: translateZ(50px);
+  opacity: 0; /* Tidak terlihat secara default */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.card:hover .questionMark {
+  opacity: 1; /* Muncul saat hover */
+  transform: translateZ(50px) scale(1.5); /* Tambahkan sedikit efek zoom */
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* Glowing text */
+}
+.card:not(:hover) .questionMark {
+  opacity: 0; /* Tidak terlihat */
+  transform: translateZ(50px); /* Kembali ke posisi semula */
+}
+
+.cardImage {
+  position: absolute; /* Position the image inside the card */
+  bottom: 20px; /* Adjust as needed */
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.cardText {
+  position: absolute;
+  left: 30px; /* Sesuaikan jarak dari kiri */
+  bottom: 35px; /* Sesuaikan jarak dari bawah */
+  color: white;
+  font-size: larger;
+  font-family: "Roboto", sans-serif;
+  font: bolder;
+}
+
+.card:hover .cardText {
+  opacity: 0; /* Sembunyikan tulisan 'CONTACT' saat hover */
+  transition: opacity 0.3s ease-in-out; /* Efek transisi smooth */
+}
+
+.cardText {
+  opacity: 1; /* Default terlihat */
+  transition: opacity 0.3s ease-in-out;
+}

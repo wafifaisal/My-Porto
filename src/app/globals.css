@@ -9,3 +9,63 @@
 .bw-to-color {
   filter: grayscale(100%);
 }
+
+/* Sliding Text */
+.sliding-text-container {
+  width: 100%;
+  text-transform: uppercase;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+/* Initially hide the big text */
+.big-text {
+  display: inline-block;
+  font-size: 100px;
+  color: blanchedalmond; /* Adjust the color as needed */
+  text-decoration-line: underline;
+
+  z-index: 0;
+  font-weight: 900;
+  opacity: 0; /* Make text initially invisible */
+  transition: transform 1s ease-out, opacity 1s ease-out; /* Smooth transition */
+}
+
+/* Small text stays in place */
+.small-text {
+  font-size: 20px;
+  font-weight: 300;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* On hover, reveal the big text and animate it */
+.sliding-text-container:hover .big-text {
+  transform: translateX(0); /* Move text into the container */
+  opacity: 1; /* Make text visible */
+  animation: marquee 10s linear infinite; /* Trigger the sliding animation */
+}
+
+/* Marquee effect with a pause in the middle */
+@keyframes marquee {
+  0% {
+    transform: translateX(100%); /* Start from the right side (out of view) */
+  }
+  40% {
+    transform: translateX(0); /* Move to the left, but hold the first 'ABOUT' */
+  }
+  60% {
+    transform: translateX(
+      0
+    ); /* Hold the second 'ABOUT' in place for a moment (pause effect) */
+  }
+  100% {
+    transform: translateX(-100%); /* Move to the left side (out of view) */
+  }
+}
