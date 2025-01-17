@@ -20,7 +20,6 @@ export function ThreeDQuestionMark({
   const [rotation, setRotation] = useState({ rotateX: 0, rotateY: 0 });
   const [isHovered, setIsHovered] = useState(false); // State to track hover
 
-  // Handle mouse movement for 3D rotation
   useEffect(() => {
     const container = containerRef.current;
 
@@ -64,13 +63,13 @@ export function ThreeDQuestionMark({
       className={styles.card}
       style={{
         background: isHovered ? hoverBackground : defaultBackground, // Dynamic background based on hover state
+        transform: `rotateX(${rotation.rotateX}deg) rotateY(${rotation.rotateY}deg)`, // Apply rotation from state
       }}
       onMouseEnter={() => setIsHovered(true)} // Set hover state to true on mouse enter
       onMouseLeave={() => setIsHovered(false)} // Set hover state to false on mouse leave
     >
       <div className={styles.questionMark}>{text}</div>
       {children && <div className={styles.cardImage}>{children}</div>}{" "}
-      {/* Render children */}
     </div>
   );
 }

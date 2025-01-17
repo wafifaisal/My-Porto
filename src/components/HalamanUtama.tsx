@@ -2,64 +2,70 @@ import ProfileGrid from "@/components/Grid/Profile";
 import { ThreeDQuestionMark } from "./3D-Card";
 import Image from "next/image";
 import styles from "../style/3D.module.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="py-7 px-4">
-      {/* Top row: ProfileGrid, About, Portfolio */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 min-h-[300px]">
         <div className="w-full">
           <ProfileGrid />
         </div>
 
-        <div className="flex items-center justify-center text-start">
-          <ThreeDQuestionMark
-            text="ABOUT"
-            defaultBackground="linear-gradient(135deg, #ff512f, #dd2476)"
-            hoverBackground="linear-gradient(135deg, #ff7043, #dd2476)"
-          >
-            <Image
-              src={"/keyboard.png"}
-              alt="ABOUT"
-              width={300}
-              height={300}
-              className="max-w-full h-auto"
-            />
-            <h2 className={`${styles.cardText} text-base lg:text-lg`}>ABOUT</h2>
-            <div className="border border-b-2 border-white w-[90%] absolute bottom-[30px]"></div>
-            <div className="absolute -bottom-2  text-white font-mono text-[10px] lg:text-[12px] left-[30px] lg:left-[30px] md:left-[50px]">
-              Passionate, dedicated, and always curious— let me share my story.
-            </div>
-          </ThreeDQuestionMark>
-        </div>
-
-        <div className="flex items-center justify-center text-start">
-          <ThreeDQuestionMark
-            text="PORTOFOLIO"
-            defaultBackground="linear-gradient(135deg, #1e3a8a, #9333ea)"
-            hoverBackground="linear-gradient(135deg, #2980b9, #8e44ad)"
-          >
-            <Image
-              src={"/space-ship.png"}
-              alt="PORTOFOLIO"
-              width={250}
-              height={250}
-              className="max-w-full h-auto"
-            />
-            <h2
-              className={`${styles.cardText} text-base lg:text-lg md:left-[50px]`}
+        <Link href={"/about"}>
+          <div className="flex items-center justify-center text-start">
+            <ThreeDQuestionMark
+              text="ABOUT"
+              defaultBackground="linear-gradient(135deg, #ff512f, #dd2476)"
+              hoverBackground="linear-gradient(135deg, #ff7043, #dd2476)"
             >
-              PORTOFOLIO
-            </h2>
-            <div className="border border-b-2 border-white w-[90%] absolute bottom-[30px]"></div>
-            <div className="absolute -bottom-2  text-white font-mono text-[10px] lg:text-[12px] left-[30px] lg:left-[30px] md:left-[50px]">
-              Take a closer look at what I’ve created and accomplished.
-            </div>
-          </ThreeDQuestionMark>
-        </div>
+              <Image
+                src={"/keyboard.png"}
+                alt="ABOUT"
+                width={300}
+                height={300}
+                className="max-w-full h-auto"
+              />
+              <h2 className={`${styles.cardText} text-base lg:text-lg`}>
+                ABOUT
+              </h2>
+              <div className="border border-b-2 border-white w-[90%] absolute bottom-[30px]"></div>
+              <div className="absolute -bottom-2  text-white font-mono text-[10px] lg:text-[12px] left-[30px] lg:left-[30px] md:left-[50px]">
+                Passionate, dedicated, and always curious— let me share my
+                story.
+              </div>
+            </ThreeDQuestionMark>
+          </div>
+        </Link>
+
+        <Link href={"/portofolio"}>
+          <div className="flex items-center justify-center text-start">
+            <ThreeDQuestionMark
+              text="PORTOFOLIO"
+              defaultBackground="linear-gradient(135deg, #1e3a8a, #9333ea)"
+              hoverBackground="linear-gradient(135deg, #2980b9, #8e44ad)"
+            >
+              <Image
+                src={"/space-ship.png"}
+                alt="PORTOFOLIO"
+                width={250}
+                height={250}
+                className="max-w-full h-auto"
+              />
+              <h2
+                className={`${styles.cardText} text-base lg:text-lg md:left-[50px]`}
+              >
+                PORTOFOLIO
+              </h2>
+              <div className="border border-b-2 border-white w-[90%] absolute bottom-[30px]"></div>
+              <div className="absolute -bottom-2  text-white font-mono text-[10px] lg:text-[12px] left-[30px] lg:left-[30px] md:left-[50px]">
+                Take a closer look at what I’ve created and accomplished.
+              </div>
+            </ThreeDQuestionMark>
+          </div>
+        </Link>
       </div>
 
-      {/* Bottom row: Education, Skills, Contact */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8 min-h-[300px]">
         <div className="flex items-center justify-center text-start">
           <ThreeDQuestionMark

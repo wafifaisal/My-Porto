@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Image from "next/image";
 
 export default function About() {
   const [openItem, setOpenItem] = useState<number | null>(null); // Track open "See More" item
@@ -146,7 +147,7 @@ export default function About() {
                     className="mt-4"
                   >
                     <p className="text-gray-600">{item.details}</p>
-                    <img
+                    <Image
                       src={item.image}
                       alt={item.title}
                       className="mt-4 w-full rounded-lg shadow-lg"

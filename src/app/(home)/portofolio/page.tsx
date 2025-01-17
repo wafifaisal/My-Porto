@@ -1,30 +1,11 @@
-"use client";
 import React from "react";
 import { HeroParallax } from "@/components/HeroParallax";
+import { products } from "@/data/products"; // Import products from a data file
 
 export default function PortofolioPage() {
-  return <HeroParallax products={products} />;
+  return (
+    <div>
+      <HeroParallax products={products} />
+    </div>
+  );
 }
-export const products = [
-  {
-    title: "Moonbeam",
-    link: "",
-    thumbnail: "",
-  },
-  {
-    title: "Cursor",
-    link: "",
-    thumbnail: "",
-  },
-  {
-    title: "Rogue",
-    link: "https://userogue.com",
-    thumbnail: "",
-  },
-
-  {
-    title: "Editorially",
-    link: "https://editorially.org",
-    thumbnail: "",
-  },
-];

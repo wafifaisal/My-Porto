@@ -1,29 +1,32 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 
 export default function CurrentGreeting() {
-  const greetings = [
-    "Hello !",
-    "Hola !",
-    "Bonjour !",
-    "Hallo !",
-    "Ciao !",
-    "Olá !",
-    "Namaste !",
-    "Salaam !",
-    "Zdravstvuyte !",
-    "こんにちは !",
-    "你好 !",
-    "안녕하세요 !",
-    "Merhaba !",
-    "Ahoj !",
-    "Szia !",
-    "Shalom !",
-    "Hei !",
-    "Salve !",
-    "Hola !",
-    "Hallo !",
-  ];
+  const greetings = useMemo(
+    () => [
+      "Hello !",
+      "Hola !",
+      "Bonjour !",
+      "Hallo !",
+      "Ciao !",
+      "Olá !",
+      "Namaste !",
+      "Salaam !",
+      "Zdravstvuyte !",
+      "こんにちは !",
+      "你好 !",
+      "안녕하세요 !",
+      "Merhaba !",
+      "Ahoj !",
+      "Szia !",
+      "Shalom !",
+      "Hei !",
+      "Salve !",
+      "Hola !",
+      "Hallo !",
+    ],
+    []
+  );
 
   const [currentGreeting, setCurrentGreeting] = useState("");
   const [index, setIndex] = useState(0);
@@ -39,7 +42,7 @@ export default function CurrentGreeting() {
   return (
     <div className="text-4xl font-extrabold text-teal-600 text-start">
       <span className="typing">{currentGreeting}</span>
-      <span className="text-gray-800"> I'm</span>
+      <span className="text-gray-800"> I&apos;m </span>
     </div>
   );
 }
