@@ -90,6 +90,60 @@
   text-align: center; 
 }
 
+.hollow-text-porto {
+  font-weight: bold;
+  color: transparent;
+  -webkit-text-stroke: 2px white; 
+  text-align: center; 
+}
+
+@keyframes border-slide {
+  0% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+.animate-border-slide {
+  animation: border-slide 0.5s ease-in-out forwards;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.animated-gradient {
+  background: linear-gradient(90deg,  #6b21a8, #8B5DFF, #BFECFF);
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease-in-out forwards;
+}
+
+@keyframes gradientShiftReverse {
+  0% {
+    background-position: 100% 50%; 
+  }
+  100% {
+    background-position: 0% 50%; 
+  }
+}
+
+.animated-gradient-reverse {
+  background: linear-gradient(90deg, #6b21a8, #8B5DFF, #BFECFF);
+  background-size: 200% 200%;
+  animation: gradientShiftReverse 3s ease-in-out forwards; /* Menggunakan animasi reverse */
+}
+
+
+
 
 
 

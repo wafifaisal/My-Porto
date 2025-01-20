@@ -6,6 +6,7 @@ export const products: {
   bgColor: string;
   difficulty: string;
   languages: string[];
+  github: string;
 }[] = [
   {
     title: "FLÉUR",
@@ -16,6 +17,7 @@ export const products: {
     bgColor: "bg-yellow-900",
     difficulty: "Intermediate",
     languages: ["TypeScript", "Next.js", "Tailwind CSS"],
+    github: "",
   },
   {
     title: "Fresh Blog",
@@ -26,6 +28,7 @@ export const products: {
     bgColor: "bg-orange-500",
     difficulty: "Beginner",
     languages: ["JavaScript", "Next.js", "Tailwind CSS"],
+    github: "",
   },
   {
     title: "HYPETIX",
@@ -36,6 +39,7 @@ export const products: {
     bgColor: "bg-blue-800",
     difficulty: "Advanced",
     languages: ["TypeScript", "Next.js", "PostgreSQL", "Prisma"],
+    github: "",
   },
   {
     title: "Dominoes",
@@ -46,5 +50,6 @@ export const products: {
     bgColor: "bg-green-500",
     difficulty: "Beginner",
     languages: ["React", "Vue", "CSS"],
+    github: "",
   },
 ];
