@@ -142,6 +142,22 @@
   animation: gradientShiftReverse 3s ease-in-out forwards; /* Menggunakan animasi reverse */
 }
 
+.custom-bg-yellow {
+  @apply bg-yellow-900;
+}
+
+.custom-bg-orange {
+  @apply bg-orange-500;
+}
+
+.custom-bg-blue {
+  @apply bg-blue-800;
+}
+
+.custom-bg-green {
+  @apply bg-green-500;
+}
+
 
 
 
