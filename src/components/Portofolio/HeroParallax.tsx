@@ -1,4 +1,3 @@
-"use client";
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import "swiper/css";
@@ -71,10 +70,9 @@ export const HeroParallax = ({ products }: { products: Product[] }) => {
   return (
     <div
       ref={ref}
-      className="h-[270vh] py-96 md:py-40 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d] "
+      className="h-[300vh] md:h-[270vh] py-96 md:py-40 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
-
       <motion.div
         style={{
           rotateX,
@@ -92,7 +90,7 @@ export const HeroParallax = ({ products }: { products: Product[] }) => {
           }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
-          <h2 className="text-center rounded-md hollow-text-porto relative -z-10 md:text-[70px] text-[50px] lg:text-[70px] xl:text-[100px]">
+          <h2 className="text-center rounded-md hollow-text-porto relative -z-10 md:text-[70px] text-[40px] lg:text-[70px] xl:text-[100px]">
             Website Development
           </h2>
         </motion.div>
@@ -105,7 +103,8 @@ export const HeroParallax = ({ products }: { products: Product[] }) => {
               breakpoints={{
                 640: { slidesPerView: 1 },
                 768: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 },
+                1024: { slidesPerView: 2 },
+                1280: { slidesPerView: 3 },
               }}
               autoplay={{
                 delay: 1000,
@@ -118,20 +117,21 @@ export const HeroParallax = ({ products }: { products: Product[] }) => {
               onSlideChangeTransitionStart={(swiper) =>
                 setActiveIndex(swiper.realIndex)
               }
+              className="mx-10"
             >
               {products.map((product, index) => (
                 <SwiperSlide
                   key={product.title}
                   className={`relative transition-transform duration-500 ${
                     index === activeIndex
-                      ? "scale-110 shadow-lg px-[6px] py-1 rounded-xl"
-                      : "scale-90"
+                      ? "md:scale-110 scale-75 shadow-lg px-[6.5px] py-[4px] rounded-xl"
+                      : "md:scale-90 scale-50"
                   }`}
                 >
                   <div
-                    className={`absolute inset-0 rounded-2xl border-4 ${
+                    className={`absolute inset-0 rounded-2xl border-[7px] md:w-full sm:w-[30rem] ${
                       index === activeIndex
-                        ? "border-purple-500 animate-border-slide"
+                        ? "border-purple-300 animate-border-slide"
                         : "border-transparent"
                     }`}
                   ></div>
@@ -139,8 +139,8 @@ export const HeroParallax = ({ products }: { products: Product[] }) => {
                 </SwiperSlide>
               ))}
             </Swiper>
-            <div className="mt-8 text-start px-10">
-              <div className="mt-8 px-10 py-6 bg-gradient-to-br from-gray-800 via-gray-900 to-black rounded-xl shadow-lg border border-gray-700">
+            <div className="mt-8 text-start px-0 md:px-10">
+              <div className="mt-8 px-5 md:px-10 py-6 bg-gradient-to-br from-gray-800 via-gray-900 to-black rounded-xl shadow-lg border border-gray-700">
                 <motion.div
                   key={products[activeIndex]?.difficulty}
                   initial={{ opacity: 0, x: -20 }}
@@ -153,11 +153,11 @@ export const HeroParallax = ({ products }: { products: Product[] }) => {
                     {products[activeIndex]?.title}
                   </h3>
 
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-col sm:flex-row lg:flex items-center gap-2">
                     <span className="text-lg font-medium text-gray-300">
                       Difficulty:
                     </span>
-                    <span
+                    <p
                       className={`${
                         products[activeIndex]?.difficulty === "Beginner"
                           ? "bg-green-600/20 text-green-400"
@@ -167,10 +167,10 @@ export const HeroParallax = ({ products }: { products: Product[] }) => {
                       } px-3 py-1 text-sm font-semibold rounded-full`}
                     >
                       {products[activeIndex]?.difficulty}
-                    </span>
+                    </p>
                   </div>
 
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-col sm:flex-row lg:flex items-center gap-2">
                     <span className="text-lg font-medium text-gray-300">
                       Languages:
                     </span>
@@ -187,46 +187,40 @@ export const HeroParallax = ({ products }: { products: Product[] }) => {
                   </div>
                 </motion.div>
               </div>
-
-              <motion.p
-                className="text-sm text-gray-200"
-                key={products[activeIndex]?.languages.join(", ")}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 20 }}
-                transition={{ duration: 0.5 }}
-              >
-                <span className="font-medium">Languages:</span>{" "}
-                {products[activeIndex]?.languages.join(", ")}
-              </motion.p>
             </div>
           </>
         ) : (
           <>
             <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
-              {firstRow.map((product) => (
+              {firstRow.map((product, index) => (
                 <ProductCard
                   product={product}
                   translate={translateX}
+                  className="md:scale-100 scale-50"
                   key={product.title}
+                  isActive={index === activeIndex}
                 />
               ))}
             </motion.div>
             <motion.div className="flex flex-row mb-20 space-x-20">
-              {secondRow.map((product) => (
+              {secondRow.map((product, index) => (
                 <ProductCard
                   product={product}
                   translate={translateXReverse}
+                  className="md:scale-100 scale-50"
                   key={product.title}
+                  isActive={index === activeIndex}
                 />
               ))}
             </motion.div>
             <motion.div className="flex flex-row-reverse space-x-reverse space-x-20">
-              {thirdRow.map((product) => (
+              {thirdRow.map((product, index) => (
                 <ProductCard
                   product={product}
                   translate={translateX}
+                  className="md:scale-100 scale-50"
                   key={product.title}
+                  isActive={index === activeIndex}
                 />
               ))}
             </motion.div>

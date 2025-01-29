@@ -29,7 +29,7 @@ export const ProductCardSwiper = ({
 
   return (
     <div
-      className="h-96 w-[30rem] relative flex-shrink-0 group"
+      className="h-96 md:w-full sm:w-[30rem] relative flex-shrink-0 group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -43,6 +43,12 @@ export const ProductCardSwiper = ({
           ease: [0.25, 0.45, 0.45, 0.95],
         }}
       >
+        <div
+          className={`absolute inset-0 rounded-2xl ${
+            isHovered ? "shadow-xl animate-glow-effect" : "shadow-none"
+          }`}
+        ></div>
+
         <Link
           href={product.link}
           target="_blank"

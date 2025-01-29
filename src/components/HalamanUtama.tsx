@@ -7,12 +7,12 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="py-7 px-4">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 min-h-[300px]">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8  min-h-[300px]">
         <div className="w-full">
           <ProfileGrid />
         </div>
 
-        <Link href={"/about"}>
+        {/* <Link href={"/about"}>
           <div className="flex items-center justify-center text-start">
             <ThreeDQuestionMark
               text="ABOUT"
@@ -36,7 +36,7 @@ export default function Home() {
               </div>
             </ThreeDQuestionMark>
           </div>
-        </Link>
+        </Link> */}
 
         <Link href={"/portofolio"}>
           <div className="flex items-center justify-center text-start">
@@ -67,7 +67,7 @@ export default function Home() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8 min-h-[300px]">
-        <div className="flex items-center justify-center text-start">
+        {/* <div className="flex items-center justify-center text-start">
           <ThreeDQuestionMark
             text="EDUCATION"
             defaultBackground="linear-gradient(135deg, #0C63E7, #03045e)"
@@ -88,33 +88,35 @@ export default function Home() {
               A journey of learning and growth that shaped my expertise.
             </div>
           </ThreeDQuestionMark>
-        </div>
+        </div> */}
 
-        <div className="flex items-center justify-center text-start">
-          <ThreeDQuestionMark
-            text="SKILLS"
-            defaultBackground="linear-gradient(135deg, #f7a800, #ff4e50)"
-            hoverBackground="linear-gradient(135deg, #ff6347, #ff9966)"
-          >
-            <Image
-              src={"/typescript.png"}
-              alt="Laptop"
-              width={250}
-              height={250}
-              className="max-w-full h-auto"
-            />
-            <h2 className={`${styles.cardText} text-base lg:text-lg`}>
-              SKILLS
-            </h2>
-            <div className="border border-b-2 border-white w-[90%] absolute bottom-[30px]"></div>
-            <div className="absolute -bottom-2  text-white font-mono text-[10px] lg:text-[12px] left-[30px] lg:left-[30px] md:left-[50px]">
-              Here’s what I bring to the table, skills that turn ideas into
-              reality.
-            </div>
-          </ThreeDQuestionMark>
-        </div>
+        <Link href={"/skills"}>
+          <div className="flex items-center justify-center text-start">
+            <ThreeDQuestionMark
+              text="SKILLS"
+              defaultBackground="linear-gradient(135deg, #f7a800, #ff4e50)"
+              hoverBackground="linear-gradient(135deg, #ff6347, #ff9966)"
+            >
+              <Image
+                src={"/typescript.png"}
+                alt="Laptop"
+                width={250}
+                height={250}
+                className="max-w-full h-auto"
+              />
+              <h2 className={`${styles.cardText} text-base lg:text-lg`}>
+                SKILLS
+              </h2>
+              <div className="border border-b-2 border-white w-[90%] absolute bottom-[30px]"></div>
+              <div className="absolute -bottom-2  text-white font-mono text-[10px] lg:text-[12px] left-[30px] lg:left-[30px] md:left-[50px]">
+                Here’s what I bring to the table, skills that turn ideas into
+                reality.
+              </div>
+            </ThreeDQuestionMark>
+          </div>
+        </Link>
 
-        <div className="flex items-center justify-center text-start">
+        {/* <div className="flex items-center justify-center text-start">
           <ThreeDQuestionMark
             text="CONTACT"
             defaultBackground="linear-gradient(135deg, #40916c, #1b4332)"
@@ -136,7 +138,7 @@ export default function Home() {
               conversation.
             </div>
           </ThreeDQuestionMark>
-        </div>
+        </div> */}
       </div>
     </div>
   );

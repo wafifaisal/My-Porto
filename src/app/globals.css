@@ -158,9 +158,40 @@
   @apply bg-green-500;
 }
 
+@keyframes glow-effect {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 0, 1);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+  }
+}
 
+.animate-glow-effect {
+  animation: glow-effect 1.5s ease-in-out infinite;
+}
 
-
+.card {
+  max-width: fit-content;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  backdrop-filter: blur(15px);
+  box-shadow: 
+    inset 0 0 20px rgba(255, 255, 255, 0.192),
+    inset 0 0 5px rgba(255, 255, 255, 0.274),
+    0 5px 5px rgba(0, 0, 0, 0.164);
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  padding: 20px;
+  cursor: pointer;
+}
 
 
 

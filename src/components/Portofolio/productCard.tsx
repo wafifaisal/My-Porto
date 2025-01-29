@@ -5,6 +5,7 @@ import Link from "next/link";
 export const ProductCard = ({
   product,
   translate,
+  isActive,
 }: {
   product: {
     title: string;
@@ -12,6 +13,8 @@ export const ProductCard = ({
     thumbnail: string;
   };
   translate: MotionValue<number>;
+  isActive: boolean;
+  className: string;
 }) => {
   return (
     <motion.div
@@ -22,7 +25,11 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product h-96 w-[30rem] relative flex-shrink-0"
+      className={`group/product h-96 w-[30rem] relative flex-shrink-0 transition-transform duration-500 ${
+        isActive
+          ? "scale-110 shadow-lg px-[6.5px] py-[4px] rounded-xl"
+          : "scale-90"
+      }`}
     >
       <Link
         href={product.link}
@@ -31,8 +38,8 @@ export const ProductCard = ({
       >
         <Image
           src={product.thumbnail}
-          height="600"
-          width="600"
+          height="500"
+          width="500"
           className="object-cover object-left-top absolute h-full w-full inset-0"
           alt={product.title}
         />
