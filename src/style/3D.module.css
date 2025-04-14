@@ -47,8 +47,9 @@
 
 .cardText {
   position: absolute;
-  left: 30px; /* Sesuaikan jarak dari kiri */
-  bottom: 35px; /* Sesuaikan jarak dari bawah */
+display: flex;
+  justify-content: center;
+  bottom: 50px;
   color: white;
   font-size: larger;
   font-family: "Roboto", sans-serif;

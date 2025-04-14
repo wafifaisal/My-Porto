@@ -9,15 +9,23 @@ export const products: {
   github: string;
 }[] = [
   {
-    title: "FLÉUR",
+    title: "FLÉUR (Company Profile)",
     link: "https://fleurnine.vercel.app/",
     thumbnail: "/FLEUR.png",
     description:
       "Built with Next.js and TypeScript, the Fleur website provides a seamless and responsive user experience. The front-end is styled using Tailwind CSS, ensuring a modern and clean design. The site’s dynamic content is powered by Contentful, a headless CMS that allows us to easily manage and display the latest products, collections, and updates. The project emphasizes scalability and modularity.",
     bgColor: "bg-yellow-900",
     difficulty: "Intermediate",
-    languages: ["TypeScript", "Next.js", "Tailwind CSS"],
-    github: "",
+    languages: [
+      "Next.js",
+      "TypeScript",
+      "Next.js",
+      "Tailwind CSS",
+      "Contentful CMS",
+      "Random User",
+      "Vercel",
+    ],
+    github: "https://github.com/wafifaisal/code-challenge/tree/code-cms",
   },
   {
     title: "Fresh Blog",
@@ -31,15 +39,26 @@ export const products: {
     github: "",
   },
   {
-    title: "HYPETIX",
+    title: "HYPETIX (Event Ticket Management Web App)",
     link: "https://hypetixx.vercel.app/",
     thumbnail: "/hypetix_preview.png",
     description:
       "HYPETIX is a cutting-edge ticketing platform developed with Next.js and TypeScript, utilizing both Server-Side Rendering (SSR) and Static Site Generation (SSG) approaches. The backend infrastructure features a PostgreSQL database integrated with Prisma ORM, ensuring robust and secure data handling. The platform is designed for scalability and user engagement.",
     bgColor: "bg-blue-800",
     difficulty: "Advanced",
-    languages: ["TypeScript", "Next.js", "PostgreSQL", "Prisma"],
-    github: "",
+    languages: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma ORM",
+      "Node.js",
+      "Tailwind CSS",
+      "Express.js",
+      "Postman",
+      "Midtrans",
+      "Vercel",
+    ],
+    github: "https://github.com/wafifaisal/minpro-FE",
   },
   {
     title: "Dominoes",
@@ -51,5 +70,27 @@ export const products: {
     difficulty: "Beginner",
     languages: ["React", "Vue", "CSS"],
     github: "",
+  },
+  {
+    title: "Nginepin (Property Renting Web App)",
+    link: "https://nginepin.vercel.app",
+    thumbnail: "/nginepin.png",
+    description:
+      "Developed key features such as Landing Page, Authentication (User/Tenant), Profiles, and Property Management to ensure a secure, user-friendly, and scalable booking system.",
+    bgColor: "bg-rose-500",
+    difficulty: "Advanced",
+    languages: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma ORM",
+      "Node.js",
+      "Tailwind CSS",
+      "Express.js",
+      "Postman",
+      "Midtrans",
+      "Vercel",
+    ],
+    github: "https://github.com/wafifaisal/Finpro-FE",
   },
 ];

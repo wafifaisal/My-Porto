@@ -1,8 +1,10 @@
+import Navbar from "@/components/Navbar/Navbar";
 import Skills from "@/components/Skills/skills";
 
 export default function SkillsPage() {
   return (
-    <div className="bg-gradient-to-br  from-neutral-700 to-[black] h-full w-full">
+    <div className="">
+      <Navbar />
       <Skills />
     </div>
   );

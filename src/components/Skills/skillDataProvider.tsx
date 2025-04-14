@@ -17,22 +17,27 @@ const SkillDataProvider = ({ src, width, height, index }: Props) => {
     triggerOnce: true,
   });
 
-  const imageVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-  };
+  const animationDelay = 0.2;
 
-  const animationDelay = 0.3;
   return (
     <motion.div
       ref={ref}
-      initial="hidden"
-      variants={imageVariants}
-      animate={inView ? "visible" : "hidden"}
-      custom={index}
-      transition={{ delay: index * animationDelay }}
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={inView ? { opacity: 1, scale: 1 } : {}}
+      transition={{
+        delay: index * animationDelay,
+        duration: 0.5,
+        ease: "easeOut",
+      }}
+      className="rounded-xl p-3 bg-white/80 shadow-lg backdrop-blur-md border border-white/30 hover:scale-105 transition-transform duration-300"
     >
-      <Image src={src} width={width} height={height} alt="skill image" />
+      <Image
+        src={src}
+        width={width}
+        height={height}
+        alt="skill image"
+        className="rounded-md object-contain"
+      />
     </motion.div>
   );
 };

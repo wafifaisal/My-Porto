@@ -42,7 +42,7 @@ export default function CurrentGreeting() {
   return (
     <div className="text-4xl font-extrabold text-teal-600 text-start">
       <span className="typing">{currentGreeting}</span>
-      <span className="text-gray-800"> I&apos;m </span>
+      <span className="text-white"> I&apos;m </span>
     </div>
   );
 }
