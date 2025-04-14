@@ -438,7 +438,7 @@ export const HeroParallax: React.FC<{ products: Product[] }> = ({
   return (
     <div
       ref={ref}
-      className="h-[400vh] md:h-[350vh] pt-10 overflow-hidden antialiased relative flex flex-col [perspective:1000px] [transform-style:preserve-3d] bg-gradient-to-b from-[#0a0a1a] via-[#131328] to-[#1a1a2e] text-white"
+      className="h-[500vh] md:h-[350vh] pt-10 overflow-hidden antialiased relative flex flex-col [perspective:1000px] [transform-style:preserve-3d] bg-gradient-to-b from-[#0a0a1a] via-[#131328] to-[#1a1a2e] text-white"
     >
       {/* Background canvas effect */}
       <canvas ref={canvasRef} className="fixed inset-0 w-full h-full z-0" />
