@@ -107,7 +107,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <div
         className={`md:hidden transition-all duration-300 overflow-hidden ${
-          menuOpen ? "max-h-80 opacity-100 mt-4" : "max-h-0 opacity-0"
+          menuOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
         }`}
       >
         <div className="bg-gray-800/90 backdrop-blur-md rounded-xl p-4 shadow-lg">
@@ -126,8 +126,8 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="/cv.pdf"
-            target="_blank"
+            href="/CV_Wafi_ATS.pdf" // Pastikan file CV disimpan di public folder
+            download
             className="w-full block px-4 py-3 mt-2 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-medium rounded-lg hover:shadow-lg hover:shadow-indigo-500/30 transition-all duration-300"
           >
             Download CV

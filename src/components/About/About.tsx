@@ -262,7 +262,7 @@ export function TimelineDemo() {
   const skills = [
     { name: "React", level: 90, color: "from-blue-500 to-cyan-400" },
     { name: "TypeScript", level: 85, color: "from-blue-600 to-indigo-500" },
-    { name: "Next.js", level: 80, color: "from-gray-800 to-gray-600" },
+    { name: "Next.js", level: 80, color: "from-rose-800 to-rose-600" },
     { name: "Node.js", level: 75, color: "from-green-500 to-emerald-400" },
     { name: "Tailwind CSS", level: 92, color: "from-cyan-500 to-blue-400" },
     { name: "Python", level: 70, color: "from-yellow-500 to-yellow-400" },
